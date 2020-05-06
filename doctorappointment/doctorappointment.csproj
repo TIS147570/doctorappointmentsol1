@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDoctors.Designer.cs">
+      <DependentUpon>AddDoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="appntappoimtmentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,11 +87,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appntDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="appntDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appntDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeUser.Designer.cs">
+      <DependentUpon>HomeUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +117,18 @@
     </Compile>
     <Compile Include="Registeruser.Designer.cs">
       <DependentUpon>Registeruser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchDoctor.Designer.cs">
+      <DependentUpon>SearchDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDoctor.Designer.cs">
+      <DependentUpon>UpdateDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewAppointmment.cs">
       <SubType>Form</SubType>
@@ -113,8 +148,17 @@
     <Compile Include="ViewUser.Designer.cs">
       <DependentUpon>ViewUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDoctors.resx">
+      <DependentUpon>AddDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUser.resx">
+      <DependentUpon>HomeUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,6 +171,12 @@
     </Compile>
     <EmbeddedResource Include="Registeruser.resx">
       <DependentUpon>Registeruser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchDoctor.resx">
+      <DependentUpon>SearchDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDoctor.resx">
+      <DependentUpon>UpdateDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAppointmment.resx">
       <DependentUpon>ViewAppointmment.cs</DependentUpon>
@@ -180,6 +230,17 @@
     </None>
     <None Include="appntDataSet2.xss">
       <DependentUpon>appntDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet3.xsc">
+      <DependentUpon>appntDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>appntDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appntDataSet3.xss">
+      <DependentUpon>appntDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
