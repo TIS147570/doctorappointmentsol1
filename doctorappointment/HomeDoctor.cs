@@ -17,13 +17,19 @@ namespace doctorappointment
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        
+        private void button1_Click(object sender, EventArgs e)
         {
+            ViewAppointmment obj = new doctorappointment.ViewAppointmment();
+            obj.ShowDialog();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form1 obj2 = new doctorappointment.Form1();
+            obj2.ShowDialog();
 
         }
     }
