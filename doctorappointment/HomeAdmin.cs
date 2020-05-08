@@ -54,7 +54,7 @@ namespace doctorappointment
 
         private void button6_Click(object sender, EventArgs e)
         {
-            new ViewAppointment().show();
+            new ViewAppointmment().Show();
             this.Hide();
         }
 
