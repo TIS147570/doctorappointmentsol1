@@ -63,5 +63,11 @@ namespace doctorappointment
             new ViewFeedback().Show();
             this.Hide();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new UpdateDoctor().Show();
+            this.Hide();
+        }
     }
 }
