@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appntDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="HomeUser.Designer.cs">
       <DependentUpon>HomeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDetails.Designer.cs">
+      <DependentUpon>MyDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +175,9 @@
     <EmbeddedResource Include="AddDoctors.resx">
       <DependentUpon>AddDoctors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeUser.resx">
       <DependentUpon>HomeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDetails.resx">
+      <DependentUpon>MyDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
