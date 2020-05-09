@@ -93,5 +93,7 @@ namespace doctorappointment
             textBox6.Text = "";
             textBox7.Text = "";
         }
+
+        
     }
 }
