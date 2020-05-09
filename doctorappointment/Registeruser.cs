@@ -62,7 +62,7 @@ namespace doctorappointment
             textBox4.Text = "";
             textBox3.Text = "";
             textBox5.Text = "";
-           
+
         }
 
         private void Registeruser_Load(object sender, EventArgs e)
