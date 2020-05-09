@@ -20,7 +20,7 @@ namespace doctorappointment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Appointment().show();
+            new .show();
             this.Hide();
 
         }
@@ -54,13 +54,19 @@ namespace doctorappointment
 
         private void button6_Click(object sender, EventArgs e)
         {
-            new ViewAppointment().show();
+            new ViewAppointmment().Show();
             this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             new ViewFeedback().Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new UpdateDoctor().Show();
             this.Hide();
         }
     }

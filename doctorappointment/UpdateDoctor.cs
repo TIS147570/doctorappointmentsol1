@@ -35,7 +35,6 @@ namespace doctorappointment
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\documents\visual studio 2015\Projects\DoctorAppointmentBookingSystemCSharp\DoctorAppointmentBookingSystemCSharp\appnmt.mdf;Integrated Security=True");
             con.Open();
             if (textBox1.Text != "")
@@ -121,6 +120,11 @@ namespace doctorappointment
             textBox5.Text = "";
             textBox6.Text = "";
             textBox1.Text = "";
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }
