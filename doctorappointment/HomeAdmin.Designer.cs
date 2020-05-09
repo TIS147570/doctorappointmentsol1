@@ -40,9 +40,10 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(42, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Appointment";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(354, 31);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(339, 31);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(108, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Add doctor";
             this.button2.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(651, 31);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(637, 31);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(103, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Search Doctor";
             this.button3.UseVisualStyleBackColor = true;
@@ -70,7 +73,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(354, 137);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(503, 177);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 23);
             this.button4.TabIndex = 3;
@@ -80,9 +84,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(53, 241);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(42, 328);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(98, 23);
             this.button5.TabIndex = 4;
             this.button5.Text = "view user";
             this.button5.UseVisualStyleBackColor = true;
@@ -90,9 +95,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(354, 241);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(339, 328);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(108, 23);
             this.button6.TabIndex = 5;
             this.button6.Text = "View Appointment";
             this.button6.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(651, 250);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(637, 328);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(103, 23);
             this.button7.TabIndex = 6;
             this.button7.Text = "View Feedback";
             this.button7.UseVisualStyleBackColor = true;
@@ -110,7 +117,8 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(65, 128);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(168, 187);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(131, 23);
             this.button8.TabIndex = 7;
@@ -131,6 +139,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HomeAdmin";
             this.Text = "HomeAdmin";
             this.ResumeLayout(false);

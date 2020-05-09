@@ -122,10 +122,7 @@ namespace doctorappointment
             textBox1.Text = "";
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
     }
 

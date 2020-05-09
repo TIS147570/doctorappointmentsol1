@@ -20,7 +20,7 @@ namespace doctorappointment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new .show();
+            new Appointment().Show();
             this.Hide();
 
         }
