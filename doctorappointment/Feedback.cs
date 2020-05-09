@@ -57,5 +57,10 @@ namespace doctorappointment
             textBox2.Text = "";
             textBox1.Text = "";
         }
+
+        private void Feedback_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

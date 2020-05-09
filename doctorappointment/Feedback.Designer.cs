@@ -121,6 +121,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Feedback";
             this.Text = "Feedback";
+            this.Load += new System.EventHandler(this.Feedback_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
