@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace doctorappointment
 {
@@ -63,5 +64,37 @@ namespace doctorappointment
             textBox4.Text = "";
             textBox5.Text = "";
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox1, "Please provide age");
+                errorProvider2.SetError(textBox1, "");
+                errorProvider3.SetError(textBox1, "");
+            }
+            else
+            {
+                Regex numberchk = new Regex(@"^([0-9]*|\d*)$");
+                if (numberchk.IsMatch(textBox1.Text))
+                {
+                    errorProvider1.SetError(textBox1, "");
+                    errorProvider2.SetError(textBox1, "");
+                    errorProvider3.SetError(textBox1, "Correct");
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, "");
+                    errorProvider2.SetError(textBox1, "Wrong format");
+                    errorProvider3.SetError(textBox1, "");
+                }
+            }
+        }
     }
 }
+
