@@ -119,5 +119,21 @@ namespace doctorappointment
         {
 
         }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox1, "Please Enter A Name");
+                errorProvider2.SetError(textBox1, "");
+                errorProvider3.SetError(textBox1, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "Correct");
+            }
+        }
     }
 }
