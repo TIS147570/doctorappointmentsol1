@@ -149,7 +149,7 @@ namespace doctorappointment
 
         private void textBox5_Validating(object sender, CancelEventArgs e)
         {
-            if (textBox2.Text == string.Empty)
+            if (textBox5.Text == string.Empty)
             {
                 errorProvider1.SetError(textBox5, "Please Enter A Password");
                 errorProvider2.SetError(textBox5, "");

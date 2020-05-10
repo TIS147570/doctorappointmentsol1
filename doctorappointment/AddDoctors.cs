@@ -90,5 +90,85 @@ namespace doctorappointment
             textBox5.Text = "";
             textBox6.Text = "";
         }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox2.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox2, "Please Enter A Name");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "Correct");
+            }
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox3.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox3, "Please Enter A Degree");
+                errorProvider2.SetError(textBox3, "");
+                errorProvider3.SetError(textBox3, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+                errorProvider2.SetError(textBox3, "");
+                errorProvider3.SetError(textBox3, "Correct");
+            }
+        }
+
+        private void textBox4_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox4.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox4, "Please Enter Doctor's Speciality");
+                errorProvider2.SetError(textBox4, "");
+                errorProvider3.SetError(textBox4, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+                errorProvider2.SetError(textBox4, "");
+                errorProvider3.SetError(textBox4, "Correct");
+            }
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox5.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox5, "Please Enter Doctor's Salary");
+                errorProvider2.SetError(textBox5, "");
+                errorProvider3.SetError(textBox5, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+                errorProvider2.SetError(textBox5, "");
+                errorProvider3.SetError(textBox5, "Correct");
+            }
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox6.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox6, "Please Enter A Password");
+                errorProvider2.SetError(textBox6, "");
+                errorProvider3.SetError(textBox6, "");
+            }
+            else
+            { 
+               errorProvider1.SetError(textBox6, "");
+                errorProvider2.SetError(textBox6, "");
+                errorProvider3.SetError(textBox6, "Correct");
+            }
+        }
     }
 }
