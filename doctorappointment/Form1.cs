@@ -96,22 +96,26 @@ namespace doctorappointment
 
         private void textBox2_Validating(object sender, CancelEventArgs e)
         {
-            var t = (sender as TextBox).Text;
-            if (string.IsNullOrWhiteSpace(t))
+            if (textBox2.Text == string.Empty)
             {
-
-                e.Cancel = true;
-                textBox2.Focus();
-                errorProvider1.SetError(textBox2,$"password should not be empty");
-
-
+                errorProvider1.SetError(textBox2, "Please Enter A Password");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "");
             }
-            else { e.Cancel = false;
+            else
+            {
                 errorProvider1.SetError(textBox2, "");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "Correct");
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
