@@ -17,24 +17,26 @@ namespace doctorappointment
         {
             InitializeComponent();
         }
+        string gender;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             
             string gen = string.Empty;
-
+            
             try
             {
-                string str = "INSERT INTO user1(name,mobile,addr,pass) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "'); ";
+
+                string str = "INSERT INTO user1(name,mobile,addr,pass,Gender) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','"+gender+"'); ";
 
                 SqlCommand cmd = new SqlCommand(str, con);
                 cmd.ExecuteNonQuery();
 
                 string str1 = "select max(Id) from user1;";
 
-                SqlCommand cmd1 = new SqlCommand(str1, con);
+                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
@@ -44,8 +46,7 @@ namespace doctorappointment
                     textBox3.Text = "";
                     textBox5.Text = "";
                     textBox1.Text = "";
-
-
+                    
                 }
             }
             catch (SqlException excep)
@@ -67,7 +68,7 @@ namespace doctorappointment
 
         private void Registeruser_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             string str1 = "select max(id) from user1;";
 
@@ -161,6 +162,16 @@ namespace doctorappointment
                 errorProvider2.SetError(textBox5, "");
                 errorProvider3.SetError(textBox5, "Correct");
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "MALE";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "FEMALE";
         }
     }
 }

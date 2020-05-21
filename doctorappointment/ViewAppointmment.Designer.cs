@@ -34,10 +34,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.appntappoimtmentDataSet = new doctorappointment.appntappoimtmentDataSet();
+            this.appntDataSet4 = new doctorappointment.appntDataSet4();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentTableAdapter = new doctorappointment.appntappoimtmentDataSetTableAdapters.appointmentTableAdapter();
-            this.tableAdapterManager = new doctorappointment.appntappoimtmentDataSetTableAdapters.TableAdapterManager();
+            this.appointmentTableAdapter = new doctorappointment.appntDataSet4TableAdapters.appointmentTableAdapter();
+            this.tableAdapterManager = new doctorappointment.appntDataSet4TableAdapters.TableAdapterManager();
             this.appointmentBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -51,7 +51,7 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.appointmentBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.appointmentDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,28 +59,36 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.appntappoimtmentDataSet)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.appntDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingNavigator)).BeginInit();
             this.appointmentBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(361, 117);
+            this.button1.Location = new System.Drawing.Point(290, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 28);
             this.button1.TabIndex = 53;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Validating += new System.ComponentModel.CancelEventHandler(this.button1_Validating);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(378, 64);
+            this.textBox1.Location = new System.Drawing.Point(412, 68);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(149, 22);
             this.textBox1.TabIndex = 52;
@@ -89,32 +97,32 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(205, 67);
+            this.label3.Location = new System.Drawing.Point(239, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 51;
-            this.label3.Text = "Enter Appointment Id";
+            this.label3.Text = "Enter Patient/User Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(307, 9);
+            this.label2.Location = new System.Drawing.Point(341, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 24);
             this.label2.TabIndex = 50;
             this.label2.Text = "View Apppointment";
             // 
-            // appntappoimtmentDataSet
+            // appntDataSet4
             // 
-            this.appntappoimtmentDataSet.DataSetName = "appntappoimtmentDataSet";
-            this.appntappoimtmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.appntDataSet4.DataSetName = "appntDataSet4";
+            this.appntDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // appointmentBindingSource
             // 
             this.appointmentBindingSource.DataMember = "appointment";
-            this.appointmentBindingSource.DataSource = this.appntappoimtmentDataSet;
+            this.appointmentBindingSource.DataSource = this.appntDataSet4;
             // 
             // appointmentTableAdapter
             // 
@@ -124,7 +132,7 @@
             // 
             this.tableAdapterManager.appointmentTableAdapter = this.appointmentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = doctorappointment.appntappoimtmentDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = doctorappointment.appntDataSet4TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // appointmentBindingNavigator
             // 
@@ -183,7 +191,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -192,14 +199,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -207,7 +214,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -216,13 +223,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -239,7 +246,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // appointmentBindingNavigatorSaveItem
@@ -247,15 +254,15 @@
             this.appointmentBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.appointmentBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("appointmentBindingNavigatorSaveItem.Image")));
             this.appointmentBindingNavigatorSaveItem.Name = "appointmentBindingNavigatorSaveItem";
-            this.appointmentBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.appointmentBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.appointmentBindingNavigatorSaveItem.Text = "Save Data";
             this.appointmentBindingNavigatorSaveItem.Click += new System.EventHandler(this.appointmentBindingNavigatorSaveItem_Click);
             // 
-            // dataGridView1
+            // appointmentDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appointmentDataGridView.AutoGenerateColumns = false;
+            this.appointmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appointmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -263,11 +270,11 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView1.DataSource = this.appointmentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 245);
-            this.dataGridView1.TabIndex = 54;
+            this.appointmentDataGridView.DataSource = this.appointmentBindingSource;
+            this.appointmentDataGridView.Location = new System.Drawing.Point(39, 201);
+            this.appointmentDataGridView.Name = "appointmentDataGridView";
+            this.appointmentDataGridView.Size = new System.Drawing.Size(735, 261);
+            this.appointmentDataGridView.TabIndex = 54;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -284,8 +291,8 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "doctor";
-            this.dataGridViewTextBoxColumn3.HeaderText = "doctor";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "did";
+            this.dataGridViewTextBoxColumn3.HeaderText = "did";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
@@ -312,12 +319,36 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "p_name";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(434, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(81, 28);
+            this.button2.TabIndex = 55;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ViewAppointmment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.appointmentDataGridView);
             this.Controls.Add(this.appointmentBindingNavigator);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -326,12 +357,15 @@
             this.Name = "ViewAppointmment";
             this.Text = "ViewAppointmment";
             this.Load += new System.EventHandler(this.ViewAppointmment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.appntappoimtmentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appntDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingNavigator)).EndInit();
             this.appointmentBindingNavigator.ResumeLayout(false);
             this.appointmentBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,10 +377,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private appntappoimtmentDataSet appntappoimtmentDataSet;
+        private appntDataSet4 appntDataSet4;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
-        private appntappoimtmentDataSetTableAdapters.appointmentTableAdapter appointmentTableAdapter;
-        private appntappoimtmentDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private appntDataSet4TableAdapters.appointmentTableAdapter appointmentTableAdapter;
+        private appntDataSet4TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator appointmentBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -360,7 +394,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton appointmentBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView appointmentDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -368,5 +402,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.Button button2;
     }
 }

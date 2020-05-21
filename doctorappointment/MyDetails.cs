@@ -14,14 +14,17 @@ namespace doctorappointment
 {
     public partial class MyDetails : Form
     {
+        
         public MyDetails()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NCS\Downloads\doctorappointmentsol\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=TrueData Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NCS\Downloads\doctorappointmentsol\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+            
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             if (textBox1.Text != "")
             {
@@ -35,7 +38,7 @@ namespace doctorappointment
                     if (dr.Read())
                     {
 
-                        textBox2.Text = dr.GetValue(0).ToString();
+                        f2textBox.Text = dr.GetValue(0).ToString();
                         textBox3.Text = dr.GetValue(1).ToString();
                         textBox4.Text = dr.GetValue(2).ToString();
                         textBox5.Text = dr.GetValue(3).ToString();
@@ -59,7 +62,7 @@ namespace doctorappointment
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
-            textBox2.Text = "";
+            f2textBox.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
@@ -74,7 +77,7 @@ namespace doctorappointment
         {
             if (textBox1.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox1, "Please provide age");
+                errorProvider1.SetError(textBox1, "Please Enter Your Id");
                 errorProvider2.SetError(textBox1, "");
                 errorProvider3.SetError(textBox1, "");
             }
@@ -94,6 +97,23 @@ namespace doctorappointment
                     errorProvider3.SetError(textBox1, "");
                 }
             }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeUser obj6 = new HomeUser();
+            obj6.ShowDialog();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

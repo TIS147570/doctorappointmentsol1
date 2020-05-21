@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace doctorappointment
 {
@@ -35,7 +36,7 @@ namespace doctorappointment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\documents\visual studio 2015\Projects\DoctorAppointmentBookingSystemCSharp\DoctorAppointmentBookingSystemCSharp\appnmt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             if (textBox1.Text != "")
             {
@@ -72,7 +73,7 @@ namespace doctorappointment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\documents\visual studio 2015\Projects\DoctorAppointmentBookingSystemCSharp\DoctorAppointmentBookingSystemCSharp\appnmt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             try
             {
@@ -122,7 +123,148 @@ namespace doctorappointment
             textBox1.Text = "";
         }
 
-       
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox2.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox2, "Please Enter A Name");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                errorProvider2.SetError(textBox2, "");
+                errorProvider3.SetError(textBox2, "Correct");
+            }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox1, "Please Enter Doctor's Id");
+                errorProvider2.SetError(textBox1, "");
+                errorProvider3.SetError(textBox1, "");
+            }
+            else
+            {
+                Regex numberchk = new Regex(@"^([0-9]*|\d*)$");
+                if (numberchk.IsMatch(textBox1.Text))
+                {
+                    errorProvider1.SetError(textBox1, "");
+                    errorProvider2.SetError(textBox1, "");
+                    errorProvider3.SetError(textBox1, "Correct");
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, "");
+                    errorProvider2.SetError(textBox1, "Wrong format");
+                    errorProvider3.SetError(textBox1, "");
+                }
+            }
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox3.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox3, "Please Enter A Degree");
+                errorProvider2.SetError(textBox3, "");
+                errorProvider3.SetError(textBox3, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+                errorProvider2.SetError(textBox3, "");
+                errorProvider3.SetError(textBox3, "Correct");
+            }
+        }
+
+        private void textBox4_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox4.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox4, "Please Enter Doctor's Speciality");
+                errorProvider2.SetError(textBox4, "");
+                errorProvider3.SetError(textBox4, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+                errorProvider2.SetError(textBox4, "");
+                errorProvider3.SetError(textBox4, "Correct");
+            }
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox5.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox5, "Please Enter Doctor's Salary");
+                errorProvider2.SetError(textBox5, "");
+                errorProvider3.SetError(textBox5, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+                errorProvider2.SetError(textBox5, "");
+                errorProvider3.SetError(textBox5, "Correct");
+            }
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox6.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox6, "Please Enter A Password");
+                errorProvider2.SetError(textBox6, "");
+                errorProvider3.SetError(textBox6, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+                errorProvider2.SetError(textBox6, "");
+                errorProvider3.SetError(textBox6, "Correct");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeAdmin obj2 = new doctorappointment.HomeAdmin();
+            obj2.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!(textBox1.Text == string.Empty))
+            {
+                SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
+
+                string query = "Delete from doctor where Id= '" + this.textBox1.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader myreader;
+                try
+                {
+                    con.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("successfully data Deleted", "user information");
+                    while (myreader.Read())
+                    {
+                    }
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    MessageBox.Show(ec.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("enter ID which you want to delete", "User information");
+            }
+        }
     }
     }
 
