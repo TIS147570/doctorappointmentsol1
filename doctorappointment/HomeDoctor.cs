@@ -20,7 +20,7 @@ namespace doctorappointment
         
         private void button1_Click(object sender, EventArgs e)
         {
-            ViewAppointmment obj = new doctorappointment.ViewAppointmment();
+            ViewAppointmment1 obj = new doctorappointment.ViewAppointmment1();
             obj.ShowDialog();
 
         }
@@ -31,6 +31,13 @@ namespace doctorappointment
             Form1 obj2 = new doctorappointment.Form1();
             obj2.ShowDialog();
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            new DoctorDetails().Show();
+            this.Hide();
         }
     }
 }

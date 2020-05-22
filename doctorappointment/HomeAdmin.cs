@@ -69,5 +69,11 @@ namespace doctorappointment
             new UpdateDoctor().Show();
             this.Hide();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            new UpdateAppointment().Show();
+            this.Hide();
+        }
     }
 }

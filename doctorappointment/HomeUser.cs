@@ -12,9 +12,11 @@ namespace doctorappointment
 {
     public partial class HomeUser : Form
     {
+        
         public HomeUser()
         {
             InitializeComponent();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -24,15 +26,29 @@ namespace doctorappointment
             obj2.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new MyDetails().Show();
-            this.Hide();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             new SearchDoctor().Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new Appoint1().Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new ViewAppointmment().Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+            new MyDetails().Show();
             this.Hide();
         }
     }

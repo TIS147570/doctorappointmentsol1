@@ -12,53 +12,51 @@ using System.Text.RegularExpressions;
 
 namespace doctorappointment
 {
-    public partial class SearchDoctor : Form
+    public partial class ViewAppointmment1 : Form
     {
-        public SearchDoctor()
+        public ViewAppointmment1()
         {
             InitializeComponent();
         }
 
-        private void doctorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void appointmentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.doctorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.appntDataSet);
+            this.appointmentBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.appntDataSet4);
 
         }
 
-        private void SearchDoctor_Load(object sender, EventArgs e)
+        private void ViewAppointmment1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'appntDataSet5.doctor' table. You can move, or remove it, as needed.
-            this.doctorTableAdapter1.Fill(this.appntDataSet5.doctor);
-            // TODO: This line of code loads data into the 'appntDataSet.doctor' table. You can move, or remove it, as needed.
-            this.doctorTableAdapter.Fill(this.appntDataSet.doctor);
-            using (SqlConnection con1 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True"))
+            // TODO: This line of code loads data into the 'appntDataSet4.appointment' table. You can move, or remove it, as needed.
+            this.appointmentTableAdapter.Fill(this.appntDataSet4.appointment);
+            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf;Integrated Security=True"))
             {
 
-                string str2 = "SELECT * FROM doctor";
+                string str2 = "SELECT * FROM appointment ";
                 SqlCommand cmd2 = new SqlCommand(str2, con1);
                 SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                doctorDataGridView.DataSource = new BindingSource(dt, null);
+                appointmentDataGridView.DataSource = new BindingSource(dt, null);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            using (SqlConnection con1 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True"))
+            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf;Integrated Security=True"))
             {
 
-                string str2 = "SELECT * FROM doctor where id='" + textBox1.Text + "'";
+                string str2 = "SELECT * FROM appointment where did='" + textBox1.Text + "'";
                 SqlCommand cmd2 = new SqlCommand(str2, con1);
                 SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                doctorDataGridView.DataSource = new BindingSource(dt, null);
+                appointmentDataGridView.DataSource = new BindingSource(dt, null);
             }
         }
 
@@ -92,7 +90,7 @@ namespace doctorappointment
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeUser obj6 = new HomeUser();
+            HomeDoctor obj6 = new HomeDoctor();
             obj6.ShowDialog();
         }
     }

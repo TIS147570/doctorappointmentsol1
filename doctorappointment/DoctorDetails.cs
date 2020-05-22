@@ -12,25 +12,23 @@ using System.Text.RegularExpressions;
 
 namespace doctorappointment
 {
-    public partial class MyDetails : Form
+    public partial class DoctorDetails : Form
     {
-        
-        public MyDetails()
+        public DoctorDetails()
         {
             InitializeComponent();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             if (textBox1.Text != "")
             {
                 try
                 {
-                    string getCust = "select name,mobile,addr,pass from user1 where id=" + Convert.ToInt32(textBox1.Text) + " ;";
+                    string getCust = "select name,degree,speciality,salary,pass from user1 where id=" + Convert.ToInt32(textBox1.Text) + " ;";
 
                     SqlCommand cmd = new SqlCommand(getCust, con);
                     SqlDataReader dr;
@@ -38,16 +36,16 @@ namespace doctorappointment
                     if (dr.Read())
                     {
 
-                        f2textBox.Text = dr.GetValue(0).ToString();
+                        textBox2.Text = dr.GetValue(0).ToString();
                         textBox3.Text = dr.GetValue(1).ToString();
                         textBox4.Text = dr.GetValue(2).ToString();
                         textBox5.Text = dr.GetValue(3).ToString();
-
+                        textBox6.Text = dr.GetValue(4).ToString();
 
                     }
                     else
                     {
-                        MessageBox.Show(" Sorry, This ID, " + textBox1.Text + " User Details Record is not Available.   ");
+                        MessageBox.Show(" Sorry, This ID, " + textBox1.Text + " Doctor Details Record is not Available.   ");
                         textBox1.Text = "";
                     }
                 }
@@ -57,20 +55,6 @@ namespace doctorappointment
                 }
                 con.Close();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            f2textBox.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
@@ -99,22 +83,21 @@ namespace doctorappointment
             }
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeUser obj6 = new HomeUser();
+            HomeDoctor obj6 = new HomeDoctor();
             obj6.ShowDialog();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
-

@@ -38,7 +38,9 @@ namespace doctorappointment
                     MessageBox.Show("You are logged in successfully..");
                     this.Visible = false;
                     HomeAdmin obj1 = new HomeAdmin();
-                    obj1.ShowDialog();
+                    obj1.ShowDialog(this);
+                    
+                    
                     textBox1.Text = "";
                     textBox2.Text = "";
                     comboBox1.Text = "--Select--";
@@ -50,7 +52,7 @@ namespace doctorappointment
             }
             else if (comboBox1.SelectedIndex == 1)
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
                 con.Open();
                 string str = "SELECT id FROM doctor WHERE name = '" + textBox1.Text + "' and pass = '" + textBox2.Text + "'";
                 SqlCommand cmd = new SqlCommand(str, con);
@@ -72,7 +74,7 @@ namespace doctorappointment
             }
             else if (comboBox1.SelectedIndex == 2)
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
                 con.Open();
                 string str = "SELECT id FROM user1 WHERE name = '" + textBox1.Text + "' and pass = '" + textBox2.Text + "'";
                 SqlCommand cmd = new SqlCommand(str, con);
@@ -92,13 +94,16 @@ namespace doctorappointment
                     MessageBox.Show("Invalid username and Password.");
                 }
             }
+            else {
+                MessageBox.Show("Select User Please");
+            }
         }
 
         private void textBox2_Validating(object sender, CancelEventArgs e)
         {
             if (textBox2.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox2, "Please Enter A Password");
+                errorProvider1.SetError(textBox2, "Please Enter Password");
                 errorProvider2.SetError(textBox2, "");
                 errorProvider3.SetError(textBox2, "");
             }
@@ -130,10 +135,16 @@ namespace doctorappointment
             }
             else
             {
-                errorProvider1.SetError(textBox2, "");
-                errorProvider2.SetError(textBox2, "");
-                errorProvider3.SetError(textBox2, "Correct");
+                errorProvider1.SetError(textBox1, "");
+                errorProvider2.SetError(textBox1, "");
+                errorProvider3.SetError(textBox1, "Correct");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new GetPass().Show();
+            this.Hide();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace doctorappointment
         {
             // TODO: This line of code loads data into the 'appntDataSet1.feedback' table. You can move, or remove it, as needed.
             this.feedbackTableAdapter.Fill(this.appntDataSet1.feedback);
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\documents\visual studio 2015\Projects\DoctorAppointmentBookingSystemCSharp\DoctorAppointmentBookingSystemCSharp\appnmt.mdf;Integrated Security=True"))
+            using (SqlConnection con1 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True"))
             {
 
                 string str2 = "SELECT * FROM feedback";
@@ -42,6 +42,13 @@ namespace doctorappointment
                 feedbackDataGridView.DataSource = new BindingSource(dt, null);
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeAdmin obj6 = new HomeAdmin();
+            obj6.ShowDialog();
         }
     }
 }

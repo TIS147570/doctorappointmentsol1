@@ -17,17 +17,17 @@ namespace doctorappointment
         {
             InitializeComponent();
         }
-
+        string gender;
         private void button1_Click(object sender, EventArgs e)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\doctorappointmentsol\doctorappointment\appnt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
             string gen = string.Empty;
 
             try
             {
-                string str = "INSERT INTO doctor(name,degree,speciality,salary,pass) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "'); ";
+                string str = "INSERT INTO doctor(name,degree,speciality,salary,pass,Gender) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + gender + "'); ";
 
                 SqlCommand cmd = new SqlCommand(str, con);
                 cmd.ExecuteNonQuery();
@@ -58,7 +58,7 @@ namespace doctorappointment
 
         private void AddDoctors_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\documents\visual studio 2015\Projects\DoctorAppointmentBookingSystemCSharp\DoctorAppointmentBookingSystemCSharp\appnmt.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf;Integrated Security=True");
             con.Open();
             string str1 = "select max(id) from doctor;";
 
@@ -84,11 +84,9 @@ namespace doctorappointment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            textBox4.Text = "";
-            textBox3.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
+            this.Hide();
+            HomeAdmin obj2 = new doctorappointment.HomeAdmin();
+            obj2.ShowDialog();
         }
 
         private void textBox2_Validating(object sender, CancelEventArgs e)
@@ -169,6 +167,22 @@ namespace doctorappointment
                 errorProvider2.SetError(textBox6, "");
                 errorProvider3.SetError(textBox6, "Correct");
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "MALE";
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "FEMALE";
         }
     }
 }

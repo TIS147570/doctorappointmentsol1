@@ -8,69 +8,63 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace doctorappointment
 {
-    public partial class Registeruser : Form
+    public partial class Appoint1 : Form
     {
-        public Registeruser()
+        public Appoint1()
         {
             InitializeComponent();
         }
-        string gender;
 
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
-            
             string gen = string.Empty;
-            
+
+
             try
             {
+                string str2 = "INSERT INTO appointment(cate,did,date,time,p_id,p_name) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "'); ";
 
-                string str = "INSERT INTO user1(name,mobile,addr,pass,Gender) VALUES('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','"+gender+"'); ";
+                SqlCommand cmd2 = new SqlCommand(str2, con);
+                cmd2.ExecuteNonQuery();
 
-                SqlCommand cmd = new SqlCommand(str, con);
-                cmd.ExecuteNonQuery();
+                string str1 = "select max(Id) from appointment;";
 
-                string str1 = "select max(Id) from user1;";
-
-                 SqlCommand cmd1 = new SqlCommand(str1, con);
-                SqlDataReader dr = cmd1.ExecuteReader();
-                if (dr.Read())
+                SqlCommand cmd1 = new SqlCommand(str1, con);
+                SqlDataReader da = cmd1.ExecuteReader();
+                if (da.Read())
                 {
-                    MessageBox.Show("Inserted New User Information Successfully..");
+                    MessageBox.Show("Inserted Appointment Information Successfully..");
                     textBox2.Text = "";
                     textBox4.Text = "";
                     textBox3.Text = "";
                     textBox5.Text = "";
-                    textBox1.Text = "";
-                    
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+
+
                 }
+                // dr.Close();
             }
             catch (SqlException excep)
             {
                 MessageBox.Show(excep.Message);
             }
+
             con.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Appoint1_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            textBox3.Text = "";
-            textBox5.Text = "";
 
-        }
-
-        private void Registeruser_Load(object sender, EventArgs e)
-        {
             SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\User\Source\Repos\TIS147570\doctorappointmentsol1\doctorappointment\appnt.mdf; Integrated Security = True");
             con.Open();
-            string str1 = "select max(id) from user1;";
+            string str1 = "select max(id) from appointment;";
 
             SqlCommand cmd1 = new SqlCommand(str1, con);
             SqlDataReader dr = cmd1.ExecuteReader();
@@ -95,15 +89,17 @@ namespace doctorappointment
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 obj6 = new Form1();
+            HomeUser obj6 = new HomeUser();
             obj6.ShowDialog();
+
         }
 
         private void textBox2_Validating(object sender, CancelEventArgs e)
         {
+
             if (textBox2.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox2, "Please Enter A Name");
+                errorProvider1.SetError(textBox2, "Please Enter A Category");
                 errorProvider2.SetError(textBox2, "");
                 errorProvider3.SetError(textBox2, "");
             }
@@ -113,22 +109,32 @@ namespace doctorappointment
                 errorProvider2.SetError(textBox2, "");
                 errorProvider3.SetError(textBox2, "Correct");
             }
-
         }
 
         private void textBox3_Validating(object sender, CancelEventArgs e)
         {
+
             if (textBox3.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox3, "Please Enter A Mobile Number");
+                errorProvider1.SetError(textBox3, "Please Enter Doctor's Id");
                 errorProvider2.SetError(textBox3, "");
                 errorProvider3.SetError(textBox3, "");
             }
             else
             {
-                errorProvider1.SetError(textBox3, "");
-                errorProvider2.SetError(textBox3, "");
-                errorProvider3.SetError(textBox3, "Correct");
+                Regex numberchk = new Regex(@"^([0-9]*|\d*)$");
+                if (numberchk.IsMatch(textBox3.Text))
+                {
+                    errorProvider1.SetError(textBox3, "");
+                    errorProvider2.SetError(textBox3, "");
+                    errorProvider3.SetError(textBox3, "Correct");
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox3, "");
+                    errorProvider2.SetError(textBox3, "Wrong format");
+                    errorProvider3.SetError(textBox3, "");
+                }
             }
         }
 
@@ -136,7 +142,7 @@ namespace doctorappointment
         {
             if (textBox4.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox4, "Please Enter An Address");
+                errorProvider1.SetError(textBox4, "Please Enter a Date");
                 errorProvider2.SetError(textBox4, "");
                 errorProvider3.SetError(textBox4, "");
             }
@@ -150,9 +156,10 @@ namespace doctorappointment
 
         private void textBox5_Validating(object sender, CancelEventArgs e)
         {
+
             if (textBox5.Text == string.Empty)
             {
-                errorProvider1.SetError(textBox5, "Please Enter A Password");
+                errorProvider1.SetError(textBox5, "Please Enter Preferred Time");
                 errorProvider2.SetError(textBox5, "");
                 errorProvider3.SetError(textBox5, "");
             }
@@ -164,14 +171,46 @@ namespace doctorappointment
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void textBox6_Validating(object sender, CancelEventArgs e)
         {
-            gender = "MALE";
+            if (textBox6.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox6, "Please Provide Your Patient/User ID");
+                errorProvider2.SetError(textBox6, "");
+                errorProvider3.SetError(textBox6, "");
+            }
+            else
+            {
+                Regex numberchk = new Regex(@"^([0-9]*|\d*)$");
+                if (numberchk.IsMatch(textBox6.Text))
+                {
+                    errorProvider1.SetError(textBox6, "");
+                    errorProvider2.SetError(textBox6, "");
+                    errorProvider3.SetError(textBox6, "Correct");
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox6, "");
+                    errorProvider2.SetError(textBox6, "Wrong format");
+                    errorProvider3.SetError(textBox6, "");
+                }
+            }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void textBox7_Validating(object sender, CancelEventArgs e)
         {
-            gender = "FEMALE";
+            if (textBox7.Text == string.Empty)
+            {
+                errorProvider1.SetError(textBox7, "Please Enter Patient Name");
+                errorProvider2.SetError(textBox7, "");
+                errorProvider3.SetError(textBox7, "");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, "");
+                errorProvider2.SetError(textBox7, "");
+                errorProvider3.SetError(textBox7, "Correct");
+            }
         }
     }
 }

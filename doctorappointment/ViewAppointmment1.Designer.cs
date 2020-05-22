@@ -1,6 +1,6 @@
 ﻿namespace doctorappointment
 {
-    partial class ViewAppointmment
+    partial class ViewAppointmment1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAppointmment));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAppointmment1));
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.appntDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingNavigator)).BeginInit();
@@ -73,45 +73,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(410, 138);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(81, 28);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(290, 128);
+            this.button1.Location = new System.Drawing.Point(266, 138);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 28);
-            this.button1.TabIndex = 53;
+            this.button1.TabIndex = 59;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.Validating += new System.ComponentModel.CancelEventHandler(this.button1_Validating);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(412, 68);
+            this.textBox1.Location = new System.Drawing.Point(388, 78);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(149, 22);
-            this.textBox1.TabIndex = 52;
+            this.textBox1.TabIndex = 58;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 71);
+            this.label3.Location = new System.Drawing.Point(215, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 16);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Enter Patient/User Id";
+            this.label3.Size = new System.Drawing.Size(111, 16);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Enter Doctor Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(341, 13);
+            this.label2.Location = new System.Drawing.Point(317, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 24);
-            this.label2.TabIndex = 50;
+            this.label2.TabIndex = 56;
             this.label2.Text = "View Apppointment";
             // 
             // appntDataSet4
@@ -161,7 +172,7 @@
             this.appointmentBindingNavigator.Name = "appointmentBindingNavigator";
             this.appointmentBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.appointmentBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.appointmentBindingNavigator.TabIndex = 54;
+            this.appointmentBindingNavigator.TabIndex = 61;
             this.appointmentBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
@@ -271,10 +282,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.appointmentDataGridView.DataSource = this.appointmentBindingSource;
-            this.appointmentDataGridView.Location = new System.Drawing.Point(39, 201);
+            this.appointmentDataGridView.Location = new System.Drawing.Point(36, 172);
             this.appointmentDataGridView.Name = "appointmentDataGridView";
-            this.appointmentDataGridView.Size = new System.Drawing.Size(735, 261);
-            this.appointmentDataGridView.TabIndex = 54;
+            this.appointmentDataGridView.Size = new System.Drawing.Size(743, 312);
+            this.appointmentDataGridView.TabIndex = 61;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -331,32 +342,21 @@
             // 
             this.errorProvider3.ContainerControl = this;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(434, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 28);
-            this.button2.TabIndex = 55;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // ViewAppointmment
+            // ViewAppointmment1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(800, 504);
             this.Controls.Add(this.appointmentDataGridView);
             this.Controls.Add(this.appointmentBindingNavigator);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Name = "ViewAppointmment";
-            this.Text = "ViewAppointmment";
-            this.Load += new System.EventHandler(this.ViewAppointmment_Load);
+            this.Name = "ViewAppointmment1";
+            this.Text = "ViewAppointmment1";
+            this.Load += new System.EventHandler(this.ViewAppointmment1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appntDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingNavigator)).EndInit();
@@ -373,6 +373,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -405,6 +406,5 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.Button button2;
     }
 }

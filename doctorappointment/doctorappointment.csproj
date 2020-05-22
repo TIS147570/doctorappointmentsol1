@@ -92,11 +92,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appntDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="appntDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appntDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="appntDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appntDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="appntDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appntDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Appoint1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appoint1.Designer.cs">
+      <DependentUpon>Appoint1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Appointment.Designer.cs">
       <DependentUpon>Appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorDetails.Designer.cs">
+      <DependentUpon>DoctorDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
@@ -109,6 +136,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetPass.Designer.cs">
+      <DependentUpon>GetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeAdmin.cs">
       <SubType>Form</SubType>
@@ -148,6 +181,12 @@
     <Compile Include="SearchDoctor.Designer.cs">
       <DependentUpon>SearchDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAppointment.Designer.cs">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +198,12 @@
     </Compile>
     <Compile Include="ViewAppointmment.Designer.cs">
       <DependentUpon>ViewAppointmment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAppointmment1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAppointmment1.Designer.cs">
+      <DependentUpon>ViewAppointmment1.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewFeedback.cs">
       <SubType>Form</SubType>
@@ -175,14 +220,23 @@
     <EmbeddedResource Include="AddDoctors.resx">
       <DependentUpon>AddDoctors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Appoint1.resx">
+      <DependentUpon>Appoint1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorDetails.resx">
+      <DependentUpon>DoctorDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetPass.resx">
+      <DependentUpon>GetPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeAdmin.resx">
       <DependentUpon>HomeAdmin.cs</DependentUpon>
@@ -211,11 +265,17 @@
     <EmbeddedResource Include="SearchDoctor.resx">
       <DependentUpon>SearchDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAppointment.resx">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateDoctor.resx">
       <DependentUpon>UpdateDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAppointmment.resx">
       <DependentUpon>ViewAppointmment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAppointmment1.resx">
+      <DependentUpon>ViewAppointmment1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewFeedback.resx">
       <DependentUpon>ViewFeedback.cs</DependentUpon>
@@ -277,6 +337,39 @@
     </None>
     <None Include="appntDataSet3.xss">
       <DependentUpon>appntDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet4.xsc">
+      <DependentUpon>appntDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>appntDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appntDataSet4.xss">
+      <DependentUpon>appntDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet5.xsc">
+      <DependentUpon>appntDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>appntDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appntDataSet5.xss">
+      <DependentUpon>appntDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet6.xsc">
+      <DependentUpon>appntDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="appntDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>appntDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appntDataSet6.xss">
+      <DependentUpon>appntDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
